@@ -1,7 +1,535 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width" />
+        <title>John Harden Portfolio</title>
+        
+        <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Merriweather:300' rel='stylesheet' type='text/css'>
+        
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    </head>
+  <style>  
+    body {
+  background-color: white;
+  font-size: 16px;
+  color: #3E5266;
+  font-family: 'Source Sans Pro', 'Arial', sans-serif; }
+  @media (max-width: 480px) {
+    body {
+      font-size: 14px; } }
+
+.container-fluid {
+  max-width: 1500px;
+  margin: auto; }
+
+.header {
+  width: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  }
+  
+  .header .sm {
+    font-size: 0.7em; }
+  @media (max-width: 100%) {
+    .header {
+      margin-top: 10%;
+      margin-bottom: 10%; } }
+
+.intro p {
+  font: 300 17px 'Source Sans Pro';
+  line-height: 1.5em;
+  margin: auto;
+  margin-bottom: 0;
+  text-align: justify;
+  width: 700px; }
+  
+  
+  @media (max-width: 480px) {
+    .intro p {
+      font-size: 16px;
+      text-align: left;
+      width: 90%; } }
+
+.container {
+  position: relative;
+  margin: auto;
+  padding-top: 1em;
+  padding-bottom: 1em; }
+
+.logo {
+  max-width: 380px;
+  margin: auto; }
+  @media (max-width: 480px) {
+    .logo {
+      max-width: 90%; } }
+
+section {
+  margin-bottom: 4%; }
+  @media (max-width: 480px) {
+    section {
+      margin-bottom: 10%; } }
+
+p {
+  line-height: 1.5em;
+  margin: 0 auto 1.3em; }
+
+a {
+  color: #6f91b2;
+  text-decoration: none;
+  outline: 0; }
+
+a:hover,
+a:active,
+a:focus {
+  text-decoration: underline;
+  outline: 0; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  font-family: 'Oswald', 'Helvetica', Arial, sans-serif; }
+
+h1 a,
+h1 a:hover,
+h1 a:active,
+h1 a:focus,
+h2 a,
+h2 a:hover,
+h2 a:active,
+h2 a:focus {
+  color: #000; }
+
+.hed {
+  text-transform: uppercase;
+  font-size: 1.3em;
+  font-weight: 400;
+  text-align: center;
+  margin: 1% auto;
+  padding: 1% 0; }
+
+li {
+  line-height: 1.5em; }
+
+.di-projects-list .proj, .di-alumni-list .proj {
+  box-shadow: 1px 1px 1px #cacaca;
+  background: #fff;
+  margin-bottom: 1em;
+  padding: 1.5em 2em 0.5em;
+  margin-left: 5.5%; }
+  @media (max-width: 768px) {
+    .di-projects-list .proj, .di-alumni-list .proj {
+      margin-left: 0; } }
+.di-projects-list .solid-bkg, .di-alumni-list .solid-bkg {
+  box-shadow: 1px 1px 1px #cacaca;
+  background: #fff;
+  padding: 1.5em; }
+.di-projects-list a, .di-alumni-list a {
+  cursor: pointer;
+  color: #3E5266;
+  display: block; }
+  .di-projects-list a:hover, .di-alumni-list a:hover {
+    color: #3E5266;
+    text-decoration: none; }
+
+.di-alumni-list {
+  text-align: center; }
+  .di-alumni-list p {
+    margin: 0.5em;
+    font-weight: 300; }
+  .di-alumni-list a:hover {
+    text-decoration: underline; }
+  @media (max-width: 480px) {
+    .di-alumni-list {
+      text-align: left; } }
+
+.di-project a {
+  display: inline-block;
+  text-decoration: none; }
+.di-project p {
+  font: 300 1em 'Source Sans Pro', 'Helvetica', Arial, sans-serif; }
+@media (max-width: 480px) {
+  .di-project h4 {
+    font-size: 16px; } }
+.di-project figure {
+  margin-bottom: 15px; }
+
+.message {
+  text-align: center;
+  font-size: 1.1em;
+  margin-bottom: 3%; }
+
+.di-ppl {
+  list-style: none outside;
+  padding: 0;
+  font-family: 'Roboto Condensed', 'Helvetica', Arial, sans-serif; }
+  .di-ppl .person {
+    text-align: center;
+    vertical-align: top;
+    margin-top: 2em; }
+    @media (max-width: 480px) {
+      .di-ppl .person {
+        font-size: 0.9em; } }
+    .di-ppl .person img {
+      border-radius: 100%; }
+      @media (max-width: 480px) {
+        .di-ppl .person img {
+          width: 115px; } }
+    .di-ppl .person .nm {
+      margin-top: 5px;
+      font-weight: 700;
+      font-size: 1.1em;
+      width: 100%; }
+    .di-ppl .person .title {
+      width: 100%;
+      font-weight: 300; }
+    .di-ppl .person .fa-twitter, .di-ppl .person .fa-envelope {
+      cursor: pointer;
+      vertical-align: middle; }
+    .di-ppl .person .fa-twitter {
+      font-size: 22px; }
+    .di-ppl .person .fa-envelope {
+      font-size: 18px;
+      padding-left: 10px;
+      margin-left: 4px;
+      border-left: 1px solid #ccc; }
+
+.di-positions {
+  box-shadow: 1px 1px 1px #cacaca;
+  background: #fff;
+  padding: 1.5em; }
+
+.contact {
+  text-align: center;
+  margin-bottom: 10%; }
+  .contact div {
+    padding: 1em 0; }
+  .contact .media-inline {
+    position: relative; }
+    .contact .media-inline a {
+      cursor: pointer;
+      display: inline-block;
+      vertical-align: middle;
+      padding: 0 2em; }
+      @media (max-width: 480px) {
+        .contact .media-inline a {
+          padding: 0 1em; } }
+
+footer {
+  background: #3E5266;
+  color: #fff;
+  padding: 2em 15px;
+  overflow: hidden; }
+  footer p {
+    margin: 0; }
+  footer .sites,
+  footer .address {
+    margin-top: 0.3em; }
+  footer .sites {
+    float: left; }
+    @media (max-width: 480px) {
+      footer .sites {
+        float: none; } }
+    footer .sites a {
+      display: block; }
+    footer .sites img {
+      max-width: 400px;
+      margin-bottom: 0.5em; }
+      @media (max-width: 480px) {
+        footer .sites img {
+          width: 100%; } }
+  footer .address {
+    float: right;
+    color: #f1f1f1;
+    text-align: right;
+    font-size: 0.9em;
+    font-weight: 300; }
+    @media (max-width: 480px) {
+      footer .address {
+        float: none;
+        text-align: center; } }
+
+/** IMAGES */
+.portfolio-image {
+  height: 500;
+  width: 100%;
+  margin: auto;
+  background-repeat: no-repeat; }
+  @media (max-width: 750px) {
+    .portfolio-image {
+      background-position: top left; } }
+
+#facultydiversity {
+  background-image: url("https://storage.googleapis.com/github_jdharden123/920x1240.jpg");
+  background-position: top center; }
+
+#titleix {
+  background-image: url("http://ww1.hdnux.com/photos/45/42/14/9839384/3/920x1240.jpg");
+  background-position: top center; }
+
+#giving-trends {
+  background-image: url("http://ww2.hdnux.com/photos/43/33/63/9288897/6/premium_landscape.jpg");
+  background-position: top center !important; }
+
+#endowments {
+  background-image: url("../img/projects/endowments.png"); }
+
+#ncaa {
+  background-image: url("../img/projects/ncaa.png");
+  background-position: top center !important; }
+
+#moocs {
+  background-image: url("../img/projects/moocs.png");
+  background-position: 76% !important; }
+
+#hag {
+  background-image: url("../img/projects/hag.png"); }
+
+#alcohol {
+  background-image: url("../img/projects/alcohol.png"); }
+
+#datachron {
+  background-image: url("https://storage.googleapis.com/github_jdharden123/rawImage.jpg");
+  background-position: top center; }
+
+#minwage {
+  background-image: url("../img/projects/minwage.png");
+  background-position: top right; }
+
+#execcomp {
+  background-image: url("../img/projects/execcomp.png"); }
+
+#phil400 {
+  background-image: url("../img/projects/phil400.png");
+  background-position: top center !important; }
+
+#phil-50 {
+  background-image: url("https://hearst.merlinone.net/mx/thumbs2016/tdir8050/ax008_18cc_9.jpg");
+  background-position: top center; }
+    
+    </style>
+    
+    <body>
+        
+                
+               <center><div class="header">
+                    <a href="http://www.twitter.com/jdharden" target="_blank"><img src="https://storage.googleapis.com/github_jdharden123/21.jpg"></a>
+                    
+                    
+               
+            </div></center>
+            
+            
+            <main role="main" class="row">
+         
+            
+            <section class="intro">
+              
+              <p>Hi.</p>                  <br>
+<p> My name is John Harden and I'm a journalist based in Texas working for the 2015 Pulitzer Prize winning newspaper the <i>Houston Chronicle</i>. </p>
+                <br>
+                <p>As a data journalist my job is to take heavy data sets and turn them into stories that the average reader won't glaze over. I started working for the <i>Chronicle</i> in 2014. Before that I worked in Dallas-Fort Worth for the A.H. Belo owned newspaper <i>The Denton Record-Chronicle.</i></p>
+                                <br>
+                <p>It was there where I won two investigative awards -- one from the Texas Associated Press Managing Editors and the second from the Society of Professional Journalists.</p>
+<p>At the Houston Chronicle my work and interactives have been honored and recognized by the Texas Press Managing Editors and the National Press Foundation.</p>                
+                
+                
+            </section>
+            <section class="col-xs-12 col-sm-12 col-md-12 col-lg-10 col-lg-offset-1 di-ppl">
+                <div class="hed col-xs-12 col-md-12 col-sm-12 col-lg-12">
+                    
+                </div>
+                
+                <center><div>
+                    <img src="https://storage.googleapis.com/github_jdharden123/hs-_K1tD.jpeg"><br><br><br>
+                    <div class="nm">John D. Harden</div>
+                    <div class="title">Data Journalist</div>
+                    <a href="//twitter.com/jdharden" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="mailto:jdharden123@gmail.com"><i class="fa fa-envelope"></i></a>
+                </div></center>
+                
+                
+                
+            </section>
+            <section class="col-xs-12 col-sm-12 col-md-12 col-lg-10 col-lg-offset-1 di-projects-list">
+                <div class="hed col-xs-12 col-md-12 col-sm-12 col-lg-12">
+                  Data-Driven Projects
+                </div>
+                <div class="proj col-xs-12 col-md-5 col-sm-5 col-lg-5">
+                    <a href="http://www.houstonchronicle.com/chemical-breakdown/1/" title="View Chemical Breakdown Part 1">
+                        <div class="di-project">
+                            <h4>Chemical Breakdown App</h4>
+                            <p><strong></strong> The Houston Chronicle investigation broke new ground about the dangers of chemical plants and storage facilities and packaged it in a way that showed this to be a significant problem. I created an app that  allows readers to look up chemical facilities that exist in their own backyards. Honored by National Press Foundation’s “Feddie” Award for Reporting on Federal Rules and Local Impact.</p>
+                            <figure>
+                                <div id="datachron" class="img-responsive portfolio-image"></div>
+                            </figure>
+                        </div>
+                    </a>
+                </div>
+                
+                 <div class="proj col-xs-12 col-md-5 col-sm-5 col-lg-5">
+                    <a href="http://www.houstonchronicle.com/news/houston-texas/houston/article/For-years-the-Houston-area-has-been-losing-ground-7951625.php" title="Houston area has been losing ground">
+                        <div class="di-project">
+                            <h4>For years, the Houston area has been losing ground</h4>
+                            <figure>
+                                <figcaption>
+                                <p>Houston is sinking - and has been for decades. First in a series.</p>
+                                </figcaption>
+                                <div id="facultydiversity" class="img-responsive portfolio-image">
+                                  
+                                  
+                                </div>
+                            </figure>
+                           
+                        </div>
+                    </a>
+                </div>
+                
+                 <div class="proj col-xs-12 col-md-5 col-sm-5 col-lg-5">
+                    <a href="http://www.houstonchronicle.com/local/article/How-floods-compare-7330750.php" title="Houston's 2015 and 2016 Floods">
+                        <div class="di-project">
+                            <h4>Breaking down Houston's recent flooding events</h4>
+                            <figure>
+                                <figcaption>
+                                <p>Much of the rainfall that drove the Houston region to a standstill last week has finally receded. It was enough rain to force business owners to close, schools to cancel and service roads to shut down.</p>
+                                </figcaption>
+                                <div id="titleix" class="img-responsive portfolio-image"></div>
+                            </figure>
+                        </div>
+                    </a>
+                </div>
+                
+                
+                <div class="proj col-xs-12 col-md-5 col-sm-5 col-lg-5">
+                    <a href="http://www.houstonchronicle.com/local/education/district-in-transition/" title="A SCHOOL DISTRICT IN TRANSITION">
+                        <div class="di-project">
+                            <h4>District in Transition</h4>
+                            <figure>
+                                <figcaption>
+                                <p>The level of a student’s eventual high school achievements in Fort Bend ISD can probably be projected before the first day of elementary school..</p>
+                                </figcaption>
+                                <div id="phil-50" class="img-responsive portfolio-image"></div>
+                            </figure>
+                        </div>
+                    </a>
+                </div>
+                <div class="proj col-xs-12 col-md-5 col-sm-5 col-lg-5">
+                    <a href="http://www.houstonchronicle.com/local/article/DEA-dismantles-Houston-network-tied-to-Mexican-6652194.php" title="Operation Hielo Mexicano -- Mexican Ice -- is far from over.">
+                        <div class="di-project">
+                            <h4>Dismantled drug network highlights Houston's meth surge</h4>
+                            <figure>
+                                <figcaption>
+                                <p>On a September morning in 2014, DEA agents with search warrants in hand swarmed several properties in Houston.</p>
+                                </figcaption>
+                                <div id="giving-trends" class="img-responsive portfolio-image"></div>
+                            </figure>
+                        </div>
+                    </a>
+                </div>
+                <div class="proj col-xs-12 col-md-5 col-sm-5 col-lg-5">
+                    <a href="http://www.houstonchronicle.com/local/article/Homicide-victims-were-5-times-more-likely-to-be-6785773.php" title="Black residents make up less than a quarter of population">
+                        <div class="di-project">
+                            <h4>Homicide victims were 5 times more likely to be black than white</h4>
+                            <figure>
+                                <figcaption>
+                                <p>An African American resident in Harris County is five times more likely than a white resident and two times more likely than a Hispanic resident to be the victim of a homicide, according to a Houston ...</p>
+                                </figcaption>
+                                <div id="endowments" class="img-responsive portfolio-image"></div>
+                            </figure>
+                        </div>
+                    </a>
+                </div>
+                <div class="proj col-xs-12 col-md-5 col-sm-5 col-lg-5">
+                    <a href="http://www.houstonchronicle.com/news/houston-texas/houston/article/Despite-national-result-Houston-area-goes-blue-10606238.php">
+                        <div class="di-project">
+                            <h4>Houston Region Turning Shades of Blue</h4>
+                            <p>How college students are funding the athletics arms race.</p>
+                            <figure>
+                                <div id="ncaa" class="img-responsive portfolio-image"></div>
+                            </figure>
+                        </div>
+                    </a>
+                </div>
+                <div class="proj col-xs-12 col-md-5 col-sm-5 col-lg-5">
+                    <a href="http://www.houstonchronicle.com/news/article/MUDs-sell-bonds-levy-taxes-for-developers-who-9957390.php">
+                        <div class="di-project">
+                            <h4>Unchecked MUDs have $60B in debt</h4>
+                            <p>MUDs sell bonds, levy taxes for developers who court conservative politicians with campaign cash.</p>
+                            <figure>
+                                <div id="phil400" class="img-responsive portfolio-image"></div>
+                            </figure>
+                        </div>
+                    </a>
+                </div>
+                <div class="proj col-xs-12 col-md-5 col-sm-5 col-lg-5">
+                    <a href="http://www.houstonchronicle.com/local/themillion/article/Maps-reveal-density-of-immigrant-neighborhood-6390645.php" title="View How Houston's Identity was Shaped">
+                        <div class="di-project">
+                            <h4>How the 1970s and '80s shaped Houston's migrant settlement patterns</h4>
+                            <p>While Mexican immigrants blanket all corners of Houston, expansion for other large migrant groups hasn't been  as clear-cut -- even if Spanish is their native language -- based on a Houston Chronicle analysis.</p>
+                            <figure>
+                                <div id="execcomp" class="img-responsive portfolio-image"></div>
+                            </figure>
+                        </div>
+                    </a>
+                </div>
+                
+                
+                <div class="proj col-xs-12 col-md-5 col-sm-5 col-lg-5">
+                    <a href="http://www.houstonchronicle.com/news/houston-texas/houston/article/Dissecting-Houston-s-massive-infrastructure-10837865.php?t=af3a0073c8438d9cbb&cmpid=twitter-premium" title="Dissecting Houston's massive infrastructure">
+                        <div class="di-project">
+                            <h4>Houston's Future:
+Dissecting Houston's massive infrastructure</h4>
+                            <p>Houston's infrastructure is always under a microscope.</p>
+                            <figure>
+                                <div id="minwage" class="img-responsive portfolio-image"></div>
+                            </figure>
+                        </div>
+                    </a>
+                </div>
+
+              
+                
+            </section>
+            <!-- alumni section -->
+            <section class="col-xs-12 col-sm-12 col-md-12 col-lg-10 col-lg-offset-1 di-alumni-list">
+                <div class="hed col-xs-12 col-md-12 col-sm-12 col-lg-12">
+                
+            </section>
+
+           
+            <section class="col-xs-12 col-sm-12 col-md-12 col-lg-10 col-lg-offset-1 contact">
+                <div class="hed col-xs-12 col-md-12 col-sm-12 col-lg-12">
+                    slide in
+                </div>
+                <div class="media-inline">
+                    <a href="//twitter.com/jdharden"><i class="fa fa-twitter fa-4x"></i></a>
+                    <a href="mailto:jdharden123@gmail.com"><i class="fa fa-envelope fa-3x"></i></a>
+                    <a href="https://github.com/jdharden"><i class="fa fa-github fa-4x"></i></a>
+                </div>
+            </section>
+            </main>
+        </div>
+        <footer>
+            <div class="footer-wrap">
+                <div class="sites">
+                    
+                </div>
+                <div class="address">
+                    <p>Somewhere in Houston, Texas</p>
+                    
+                </div>
+            </div>
+        </footer>
+    </body>
 </html>
