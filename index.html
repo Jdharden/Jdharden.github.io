@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="viewport" content="width=device-width" />
         <title>John Harden Portfolio</title>
         
@@ -17,18 +18,21 @@
 
     </head>
   <style>  
-    body {
+    html, body {
   background-color: white;
   font-size: 16px;
   color: #3E5266;
+width: 100%;
   font-family: 'Source Sans Pro', 'Arial', sans-serif; }
-  @media (max-width: 480px) {
+ 
+ @media (max-width: 1000px) {
     body {
-      font-size: 14px; } }
-
+font-size: 14px; } }
+width: 1000px;
 .container-fluid {
   max-width: 1500px;
-  margin: auto; }
+  
+  }
 
 .header {
   width: auto;
@@ -56,11 +60,12 @@
     .intro p {
       font-size: 16px;
       text-align: left;
-      width: 90%; } }
+      width: 100%; } }
 
 .container {
   position: relative;
   margin: auto;
+width: auto;
   padding-top: 1em;
   padding-bottom: 1em; }
 
@@ -126,6 +131,7 @@ li {
   box-shadow: 1px 1px 1px #cacaca;
   background: #fff;
   margin-bottom: 1em;
+width: auto;
   padding: 1.5em 2em 0.5em;
   margin-left: 5.5%; }
   @media (max-width: 768px) {
@@ -155,11 +161,12 @@ li {
       text-align: left; } }
 
 .di-project a {
+width: 900px;
   display: inline-block;
   text-decoration: none; }
 .di-project p {
   font: 300 1em 'Source Sans Pro', 'Helvetica', Arial, sans-serif; }
-@media (max-width: 480px) {
+@media (max-width: 900px) {
   .di-project h4 {
     font-size: 16px; } }
 .di-project figure {
@@ -299,9 +306,22 @@ footer {
 #alcohol {
   background-image: url("../img/projects/alcohol.png"); }
 
-#datachron {
-  background-image: url("https://storage.googleapis.com/github_jdharden123/rawImage.jpg");
-  background-position: top center; }
+#datachron1 {
+  background-image:
+  url("http://ww3.hdnux.com/photos/61/62/13/13050582/3/920x920.jpg");
+  background-position: top center;
+  height: 450px;
+  width: 100%;
+  }
+  
+  #datachron {
+  background-image:
+  url("https://storage.googleapis.com/github_jdharden123/rawImage.jpg");
+  background-position: top center;
+  height: 450px;
+  width: 100%;
+  }
+  
 
 #minwage {
   background-image: url("../img/projects/minwage.png");
@@ -366,6 +386,28 @@ footer {
                 <div class="hed col-xs-12 col-md-12 col-sm-12 col-lg-12">
                   Data-Driven Projects
                 </div>
+                
+                 <div class="proj col-xs-12 col-md-5 col-sm-5 col-lg-5">
+                    <a href="http://www.houstonchronicle.com/news/houston-texas/houston/article/Loss-of-jobs-business-puts-Sunnyside-in-peril-11226461.php" title="View Chemical Breakdown Part 1">
+                        <div class="di-project">
+                            <h4>Identity Part 1: PROSPERITY TO POVERTY</h4>
+                            <p><strong></strong> A couple of blocks south of Larry Sawh's resale shop in Sunnyside sit rows of barren, boarded storefronts. From the driveway of his business, he can point and name a few of his former neighbors.
+
+Marshall's Tire Shop. South Side Store Food-n-Moe. David's Furniture. Screwed up Records. Money to Loan.
+
+Sawh, or Mr. Larry as locals call him, says these once-mainstays along with many others helped the community - once known as Baby River Oaks and Black Wall Street - flourish, keeping unemployment low and hopes high.
+
+"This is a close knit-community, and for many people here, starting a business was a good way to support each other," Sawh said.
+
+But that was more than 30 years ago, before the oil busts and the recessions. </p>
+                            <figure>
+                                <div id="datachron1" class="img-responsive portfolio-image"></div>
+                            </figure>
+                        </div>
+                    </a>
+                </div>
+                
+                
                 <div class="proj col-xs-12 col-md-5 col-sm-5 col-lg-5">
                     <a href="http://www.houstonchronicle.com/chemical-breakdown/1/" title="View Chemical Breakdown Part 1">
                         <div class="di-project">
@@ -506,6 +548,8 @@ Dissecting Houston's massive infrastructure</h4>
                 <div class="hed col-xs-12 col-md-12 col-sm-12 col-lg-12">
                 
             </section>
+            
+            
 
            
             <section class="col-xs-12 col-sm-12 col-md-12 col-lg-10 col-lg-offset-1 contact">
@@ -515,7 +559,7 @@ Dissecting Houston's massive infrastructure</h4>
                 <div class="media-inline">
                     <a href="//twitter.com/jdharden"><i class="fa fa-twitter fa-4x"></i></a>
                     <a href="mailto:jdharden123@gmail.com"><i class="fa fa-envelope fa-3x"></i></a>
-                    <a href="https://github.com/jdharden"><i class="fa fa-github fa-4x"></i></a>
+                    <a  href="https://github.com/jdharden"><i class="fa fa-github fa-4x"></i></a>
                 </div>
             </section>
             </main>
