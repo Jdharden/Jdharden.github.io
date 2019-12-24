@@ -1,741 +1,298 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<title>John D. Harden</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+}
 
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width" />
-    <title>John Harden Portfolio</title>
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:300' rel='stylesheet' type='text/css'>
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url('https://github.com/Jdharden/Jdharden.github.io/blob/master/PicsArt_08-18-10.33.17.jpg?raw=true');
+  min-height: 100%;
+}
 
-    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("https://github.com/Jdharden/Jdharden.github.io/blob/master/PicsArt_12-23-11.11.21.jpg?raw=true");
+  min-height: 400px;
+}
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+/* Third image (Contact) */
+.bgimg-3 {
+  background-image: url("https://github.com/Jdharden/Jdharden.github.io/blob/master/20190817_214157.jpg?raw=trued");
+  min-height: 400px;
+}
 
-  </head>
-  <style>
-    html,
-    body {
-      background-color: white;
-      font-size: 20px;
-      color: black;
-      width: 100%;
-      font-family: 'Georgia black';
-    }
-    
-    @media (max-width: 1000px) {
-      body {
-        font-size: 14px;
-        width: fit-content;
-         
-      }
-    }
-    
-    width: 1000px;
-    .container-fluid {
-      max-width: 1500px;
-    }
-    
-    .header {
-      width: auto;
-      margin-top: 5%;
-      margin-bottom: 5%;
-    }
-    
-    .header .sm {
-      font-size: 0.7em;
-    }
-    
-    @media (max-width: 100%) {
-      .header {
-        margin-top: 10%;
-        margin-bottom: 10%;
-      }
-    }
-    
-    .intro p {
-      font: 300 17px 'Source Sans Pro';
-      line-height: 1.5em;
-      margin: auto;
-      margin-bottom: 0;
-      text-align: justify;
-      width: 700px;
-    }
-    
-    @media (max-width: 480px) {
-      .intro p {
-        font-size: 16px;
-        text-align: left;
-        width: 100%;
-      }
-    }
-    
-    .container {
-      position: relative;
-      margin: auto;
-      width: auto;
-      padding-top: 1em;
-      padding-bottom: 1em;
-    }
-    
-    .logo {
-      max-width: 380px;
-      margin: auto;
-    }
-    
-    @media (max-width: 480px) {
-      .logo {
-        max-width: 90%;
-      }
-    }
-    
-    section {
-      margin-bottom: 4%;
-    }
-    
-    @media (max-width: 480px) {
-      section {
-        margin-bottom: 10%;
-      }
-    }
-    
-    p {
-      line-height: 1.5em;
-      margin: 0 auto 1.3em;
-    }
-    
-    a {
-      color: #6f91b2;
-      text-decoration: none;
-      outline: 0;
-    }
-    
-    a:hover,
-    a:active,
-    a:focus {
-      text-decoration: underline;
-      outline: 0;
-    }
-    
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-weight: 700;
-      font-family: 'Georgia black';
-    }
-    
-    h1 a,
-    h1 a:hover,
-    h1 a:active,
-    h1 a:focus,
-    h2 a,
-    h2 a:hover,
-    h2 a:active,
-    h2 a:focus {
-      color: #000;
-    }
-    
-    .hed {
-      text-transform: uppercase;
-      font-size: 1.3em;
-      font-weight: 400;
-      text-align: center;
-      margin: 1% auto;
-      padding: 1% 0;
-    }
-    
-    li {
-      line-height: 1.5em;
-    }
-    
-    .di-projects-list .proj,
-    .di-alumni-list .proj {
-      box-shadow: 1px 1px 1px #cacaca;
-      background: #fff;
-      margin-bottom: 1em;
-      width: auto;
-      padding: 1.5em 2em 0.5em;
-      margin-left: 5.5%;
-    }
-    
-    @media (max-width: 768px) {
-      .di-projects-list .proj,
-      .di-alumni-list .proj {
-        margin-left: 0;
-      }
-    }
-    
-    .di-projects-list .solid-bkg,
-    .di-alumni-list .solid-bkg {
-      box-shadow: 1px 1px 1px #cacaca;
-      background: #fff;
-      padding: 1.5em;
-    }
-    
-    .di-projects-list a,
-    .di-alumni-list a {
-      cursor: pointer;
-      color: #3E5266;
-      display: block;
-    }
-    
-    .di-projects-list a:hover,
-    .di-alumni-list a:hover {
-      color: #3E5266;
-      text-decoration: none;
-    }
-    
-    .di-alumni-list {
-      text-align: center;
-    }
-    
-    .di-alumni-list p {
-      margin: 0.5em;
-      font-weight: 300;
-    }
-    
-    .di-alumni-list a:hover {
-      text-decoration: underline;
-    }
-    
-    @media (max-width: 480px) {
-      .di-alumni-list {
-        text-align: left;
-      }
-    }
-    
-    .di-project a {
-      width: 900px;
-      display: inline-block;
-      text-decoration: none;
-    }
-    
-    .di-project p {
-      font: 300 1em 'Georgia', 'Helvetica', Arial, sans-serif;
-    }
-    
-    @media (max-width: 900px) {
-      .di-project h4 {
-        font-size: 16px;
-      }
-    }
-    
-    .di-project figure {
-      margin-bottom: 15px;
-    }
-    
-    .message {
-      text-align: center;
-      font-size: 1.1em;
-      margin-bottom: 3%;
-    }
-    
-    .di-ppl {
-      list-style: none outside;
-      padding: 0;
-      font-family: 'Georgia', 'Helvetica', Arial, sans-serif;
-    }
-    
-    .di-ppl .person {
-      text-align: center;
-      vertical-align: top;
-      margin-top: 2em;
-    }
-    
-    @media (max-width: 480px) {
-      .di-ppl .person {
-        font-size: 0.9em;
-      }
-    }
-    
-    .di-ppl .person img {
-      border-radius: 100%;
-    }
-    
-    @media (max-width: 480px) {
-      .di-ppl .person img {
-        width: 115px;
-      }
-    }
-    
-    .di-ppl .person .nm {
-      margin-top: 5px;
-      font-weight: 700;
-      font-size: 1.1em;
-      width: 100%;
-    }
-    
-    .di-ppl .person .title {
-      width: 100%;
-      font-weight: 300;
-    }
-    
-    .di-ppl .person .fa-twitter,
-    .di-ppl .person .fa-envelope {
-      cursor: pointer;
-      vertical-align: middle;
-    }
-    
-    .di-ppl .person .fa-twitter {
-      font-size: 22px;
-    }
-    
-    .di-ppl .person .fa-envelope {
-      font-size: 18px;
-      padding-left: 10px;
-      margin-left: 4px;
-      border-left: 1px solid #ccc;
-    }
-    
-    .di-positions {
-      box-shadow: 1px 1px 1px #cacaca;
-      background: #fff;
-      padding: 1.5em;
-    }
-    
-    .contact {
-      text-align: center;
-      margin-bottom: 10%;
-    }
-    
-    .contact div {
-      padding: 1em 0;
-    }
-    
-    .contact .media-inline {
-      position: relative;
-    }
-    
-    .contact .media-inline a {
-      cursor: pointer;
-      display: inline-block;
-      vertical-align: middle;
-      padding: 0 2em;
-    }
-    
-    @media (max-width: 480px) {
-      .contact .media-inline a {
-        padding: 0 1em;
-      }
-    }
-    
-    footer {
-      color: #fff;
-      padding: 2em 15px;
-      overflow: hidden;
-    }
-    
-    footer p {
-      margin: 0;
-    }
-    
-    footer .sites,
-    footer .address {
-      margin-top: 0.3em;
-    }
-    
-    footer .sites {
-      float: left;
-    }
-    
-    @media (max-width: 480px) {
-      footer .sites {
-        float: none;
-      }
-    }
-    
-    footer .sites a {
-      display: block;
-    }
-    
-    footer .sites img {
-      max-width: 400px;
-      margin-bottom: 0.5em;
-    }
-    
-    @media (max-width: 480px) {
-      footer .sites img {
-        width: 100%;
-      }
-    }
-    
-    footer .address {
-      float: right;
-      color: red;
-      text-align: right;
-      font-size: 0.9em;
-      font-weight: 300;
-    }
-    
-    @media (max-width: 480px) { 
-      footer .address {
-        float: none;
-        text-align: center;
-      }
-    }
-    /** IMAGES */
-    
-    .portfolio-image {
-      height: 500;
-      width: 100%;
-      margin: auto;
-      background-repeat: no-repeat;
-    }
-    
-    @media (max-width: 750px) {
-      .portfolio-image {
-        background-position: top left;
-      }
-    }
-    
-    #facultydiversity {
-      background-image: url("https://storage.googleapis.com/github_jdharden123/920x1240.jpg");
-      background-position: top center;
-      height: 450px;
-      width: 100%;
-      !important;
-    }
-    
-    #titleix {
-      background-image: url("http://ww1.hdnux.com/photos/45/42/14/9839384/3/920x1240.jpg");
-      background-position: top center;
-      height: 450px;
-      width: 100%;
-      !important;
-    }
-    
-    #giving-trends {
-      background-image: url("http://ww2.hdnux.com/photos/43/33/63/9288897/6/premium_landscape.jpg");
-      background-position: top center;
-      height: 450px;
-      width: 100%;
-      !important;
-    }
-    
-    #endowments {
-      background-image: url("http://ww1.hdnux.com/photos/43/00/77/9179100/3/920x1240.jpg");
-      background-position: top center;
-      height: 450px;
-      width: 100%;
-    }
-    
-    #ncaa {
-      background-image: url("http://ww1.hdnux.com/photos/54/75/20/11785240/4/920x920.jpg");
-      background-position: top center !important;
-      background-position: top center;
-      height: 450px;
-      width: 100%;
-    }
-    
-    #moocs {
-      background-image: url("../img/projects/moocs.png");
-      background-position: 76% !important;
-    }
-    
-    #hag {
-      background-image: url("../img/projects/hag.png");
-    }
-    
-    #alcohol {
-      background-image: url("../img/projects/alcohol.png");
-    }
-    
-    #datachron1 {
-      background-image: url("http://ww3.hdnux.com/photos/61/62/13/13050582/3/920x920.jpg");
-      background-position: top center;
-      height: 450px;
-      width: 100%;
-    }
-    
-    #datachron {
-      background-image: url("https://storage.googleapis.com/github_jdharden123/rawImage.jpg");
-      background-position: top center;
-      height: 450px;
-      width: 100%;
-    }
-    
-    #minwage {
-      background-image: url("https://pbs.twimg.com/media/DRqZhzLUIAArnss.jpg");
-      background-position: top center;
-      height: 450px;
-      width: 100%;
-    }
-    
-    #execcomp {
-      background-image: url("http://ww3.hdnux.com/photos/40/11/14/8426274/6/920x1240.jpg");
-      background-position: top center;
-      height: 450px;
-      width: 100%;
-    }
-    
-    #phil400 {
-      background-image: url("http://ww3.hdnux.com/photos/53/31/55/11377530/3/920x1240.jpg");
-      background-position: top center;
-      height: 450px;
-      width: 100%;
-    }
-    
-    #phil-50 {
-      background-image: url("https://hearst.merlinone.net/mx/thumbs2016/tdir8050/ax008_18cc_9.jpg");
-      background-position: top center;
-      height: 450px;
-      width: 100%;
-    }
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
 
-  </style>
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+}
+</style>
+<body>
 
-  <body>
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#home" class="w3-bar-item w3-button">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+      <i class="fa fa-search"></i>
+    </a>
+  </div>
 
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
+    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+  </div>
+</div>
 
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">By John D. Harden </span>
+  </div>
+</div>
 
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">ABOUT ME</h3>
+  <p class="w3-center"><em>Database Journalist</em></p>
+  <p>My name is John Harden, and I'm a data scientist and a journalist for The Washington Post. I am a University on Texas at Arlington journalism and public affairs graduate. I am also enrolled in an Johns Hopkins University data science program, expecting completion in May 2018.<p>
+As a data journalist my job is to take heavy data sets, compute them and then turn them into stories that the average reader won't glaze over. I started working for the Chronicle in 2014. Before that I worked in Dallas-Fort Worth for the A.H. Belo owned newspaper The Denton Record-Chronicle.
+<p>In 2018, I was a part of the team recognized as a Pulitzer Prize finalist for its coverage of Hurricane Harvey. I've won two investigative awards -- one from the Texas Associated Press Managing Editors and the second from the Society of Professional Journalists. At the Houston Chronicle my work and interactives were recognized by the Texas Associated Press Managing Editors and the National Press Foundation..</p>
+  <div class="w3-row">
+    <div class="w3-col m6 w3-center w3-padding-large">
+      <p><b><i class="fa fa-user w3-margin-right"></i>John D. Harden</b></p><br>
+      <img src="https://github.com/Jdharden/Jdharden.github.io/blob/master/0099531_0099531-R1-033-15.jpg?raw=true" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
+    </div>
 
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large">
+      <p>More Coming Soon! </p>
+    </div>
+  </div>
+  <p class="w3-large w3-center w3-padding-16">WashPost Responsibilities <br>(esitmates):</p>
+  <p class="w3-wide"> Data Science</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:70%">70%</div>
+  </div>
+  <p class="w3-wide">Story Writing</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:20%">20%</div>
+  </div>
+  <p class="w3-wide">Programming</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:10%">10%</div>
+  </div>
+</div>
 
+<div class="w3-row w3-center w3-dark-grey w3-padding-16">
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">1</span><br>
+    Pulizter Prize Finalist (Shared with Houston Chronicle Staff)
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">8+</span><br>
+    Years Experience with R Programming
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">9+</span><br>
+    Years I've been a member of IRE NICAR
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">450+</span><br>
+    Gigs of data processed (and counting) 
+  </div>
+</div>
 
-    <main role="main" class="row">
+<!-- Second Parallax Image with Portfolio Text -->
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">PORTFOLIO</span>
+  </div>
+</div>
 
+<!-- Container (Portfolio Section) -->
+<div class="" id="portfolio">
+  <h3 class="w3-center">LATEST WORKS</h3>
+  <p class="w3-center"><em>My latest Projects at the Washington Post.<br> Click on the images to explore</em></p><br>
 
-      <section class="intro">
+  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+  <div class="w3-row-padding w3-center">
+    <div class="w3-col m3">
+      <a href="https://www.washingtonpost.com/local/outdated-poverty-data-funneled-millions-to-wealthy-dc-neighborhoods-post-analysis-shows/2019/11/19/3eadb000-b25c-11e9-951e-de024209545d_story.html?arc404=true"> 
+      <img src="https://www.washingtonpost.com/resizer/QSQ2LtFJeaAy6wwxB57Z8scPan8=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/6DPB4EGZLMI6TINFCYVYVHE4UI.jpg" style="width:100%" class="w3-hover-opacity" alt="Outdated poverty data funneled millions to wealthy D.C. neighborhoods, Post analysis shows"> 
+      </a>
+    </div>
 
-        <center>
-          <a href="http://www.twitter.com/jdharden" target="_blank"><img src="https://storage.googleapis.com/houston_chron_projects/Election%20Data/Election%20Gif.gif" width="800"></a>
-          <center>
+    <div class="w3-col m3">
+        <a href="https://www.washingtonpost.com/local/a-federal-program-was-established-to-help-disadvantaged-areas-thats-not-where-most-of-the-money-goes/2019/04/25/c0bae5c2-f411-11e8-80d0-f7e1948d55f4_story.html?arc404=true">
+      <img src="https://www.washingtonpost.com/resizer/bQZdgFehwejZ6ZZ-r-pPJM5_t10=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/FIMAE6BPZYI6TB4BOY3BT4JMWQ.jpg" style="width:100%" class="w3-hover-opacity" alt="A federal program was established to help disadvantaged areas. That’s not where most of the money goes.">
+    </a>
+    </div>
 
-            <p>
+    <div class="w3-col m3">
+        <a href="https://www.washingtonpost.com/religion/how-president-obama-politicized-thoughts-and-prayers-after-mass-shootings/2019/04/19/2895d7b6-5d5c-11e9-a00e-050dc7b82693_story.html">
+      <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/YAOJ5TDDSEI6TPZE3NFZ7NRKUI.jpg" style="width:100%" class="w3-hover-opacity" alt="How President Obama politicized the use of ‘thoughts and prayers’ after mass shootings">
+   </a>
+    </div>
 
-            <br>
-            <p> My name is John Harden, and I'm a data scientist and a journalist for <i>The Washington Post</i>. I am a University on Texas at Arlington journalism and public affairs graduate. I am also enrolled in an Johns Hopkins University data science program, expecting completion in May 2018.</p>
-            <br>
-            <p>As a data journalist my job is to take heavy data sets, compute them and then turn them into stories that the average reader won't glaze over. I started working for the <i>Chronicle</i> in 2014. Before that I worked in Dallas-Fort Worth for
-              the A.H. Belo owned newspaper <i>The Denton Record-Chronicle.</i></p>
-            <br>
-            <p>In 2018, I was a part of the team recognized as a Pulitzer Prize finalist for its coverage of Hurricane Harvey.  I've won two investigative awards -- one from the Texas Associated Press Managing Editors and the second from the Society of Professional Journalists. At the Houston Chronicle my work and interactives were recognized by the Texas Associated Press Managing Editors and the National Press Foundation. </p>
-<br>
- 
-Follow me on <a href="http://twitter.com/jdharden" target="_blank">Twitter,</a> <a href="http://instagram.com/jdharden" target="_blank">Instagram</a> and <a href="https://www.facebook.com/johnnynewspaper/" target="_blank">Facebook</a>.
-</center>
+    <div class="w3-col m3">
+        <a href="https://www.washingtonpost.com/business/2019/06/13/amazons-hq-is-already-making-arlingtons-housing-prices-skyrocket/">
+      <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/RPB55ZTYBII6TJ57ZCSDXBHOGE.jpg" style="width:100%" class="w3-hover-opacity" alt="Amazon’s HQ2 prompts housing price spikes in Northern Virginia, Washington Post analysis shows">
+    </a>
+    </div>
+  </div>
 
-<p>
-            </p>
-            
-            <br>
-            <p>
+  <div class="w3-row-padding w3-center w3-section">
+    <div class="w3-col m3">
+        <a href="https://www.houstonchronicle.com/news/houston-texas/houston/article/Delayed-911-responses-during-Harvey-left-12979327.php">
+      <img src="https://s.hdnux.com/photos/73/66/71/15691367/5/gallery_xlarge.jpg" style="width:100%" class="w3-hover-opacity" alt="Delayed 911 responses during Harvey left some residents waiting days for help">
+    </a>
+    </div>
 
-              <br>
-              <p></p>
+    <div class="w3-col m3">
+        <a href="https://www.houstonchronicle.com/news/houston-texas/houston/article/Loss-of-jobs-business-puts-Sunnyside-in-peril-11226461.php">
+      <img src="https://s.hdnux.com/photos/61/77/44/13105444/3/920x1240.jpg" style="width:100%" class="w3-hover-opacity" alt="Loss of jobs, business puts Sunnyside in peril">
+    </a>
+    </div>
 
-      </section>
+    <div class="w3-col m3">
+        <a href="https://www.houstonchronicle.com/news/houston-texas/houston/article/For-years-the-Houston-area-has-been-losing-ground-7951625.php">
+      <img src="https://s.hdnux.com/photos/46/57/71/10157648/3/gallery_xlarge.jpg" style="width:100%" class="w3-hover-opacity" alt="For years, the Houston area has been losing ground">
+    </a>
+    </div>
 
+    <div class="w3-col m3">
+        <a href="https://www.houstonchronicle.com/news/article/MUDs-sell-bonds-levy-taxes-for-developers-who-9957390.php?t=0618abfe29438d9cbb">
+      <img src="https://s.hdnux.com/photos/53/31/55/11377530/3/940x0.jpg" style="width:100%" class="w3-hover-opacity" alt="MUDs sell bonds, levy taxes for developers who court conservative politicians with campaign cash">
+    </a>
+    </div>
+    <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
+  </div>
+</div>
 
-      <section class="col-xs-12 col-sm-12 col-md-12 col-lg-10 col-lg-offset-1 di-ppl">
-        <div class="hed col-xs-12 col-md-12 col-sm-12 col-lg-12">
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
 
-        </div>
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
+  </div>
+</div>
 
-        <center>
-          <div>
-            <img src="https://pbs.twimg.com/profile_images/1018166412542664704/vheoGti5_400x400.jpg" height="200">
-            <br>
-            <br>
-            <br>
-            <div class="nm">John D. Harden</div>
-            <div class="title">Data Journalist</div>
-            <a href="//twitter.com/jdharden" target="_blank"><i class="fa fa-twitter"></i></a>
-            <a href="mailto:jdharden123@gmail.com"><i class="fa fa-envelope"></i></a>
-          </div>
-        </center>
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-padding-64" id="contact">
+  <p class="w3-center"><em>Say hi.</em></p>
 
-
-
-      </section>
-      <section class="col-xs-12 col-sm-12 col-md-12 col-lg-10 col-lg-offset-1 di-projects-list">
-        <div class="hed col-xs-12 col-md-12 col-sm-12 col-lg-12">
-          Data-Driven Projects
-        </div>
-
-        <div class="proj col-xs-12 col-md-5 col-sm-5 col-lg-5">
-          <a href="http://www.houstonchronicle.com/news/houston-texas/houston/article/Loss-of-jobs-business-puts-Sunnyside-in-peril-11226461.php" width="100%" title="View Sunnyside Part 1">
-            <div class="di-project">
-              <h4>Identity Part 1: PROSPERITY TO POVERTY</h4>
-              <p><strong></strong> A couple of blocks south of Larry Sawh's resale shop in Sunnyside sit rows of barren, boarded storefronts. From the driveway of his business, he can point and name a few of his former neighbors. Marshall's Tire Shop. South
-                Side Store Food-n-Moe. David's Furniture. Screwed up Records. Money to Loan. Sawh, or Mr. Larry as locals call him, says these once-mainstays along with many others helped the community - once known as Baby River Oaks and Black Wall Street
-                - flourish, keeping unemployment low and hopes high. "This is a close knit-community, and for many people here, starting a business was a good way to support each other," Sawh said. But that was more than 30 years ago, before the oil busts
-                and the recessions. </p>
-              <figure>
-                <div id="datachron1" class="img-responsive portfolio-image"></div>
-              </figure>
-            </div>
-          </a>
-        </div>
-
-
-        <div class="proj col-xs-12 col-md-5 col-sm-5 col-lg-5">
-          <a href="http://www.houstonchronicle.com/chemical-breakdown/1/" title="View Chemical Breakdown Part 1">
-            <div class="di-project">
-              <h4>Chemical Breakdown App</h4>
-              <p><strong></strong> The Houston Chronicle investigation broke new ground about the dangers of chemical plants and storage facilities and packaged it in a way that showed this to be a significant problem. I created an app that allows readers
-                to look up chemical facilities that exist in their own backyards. Honored by National Press Foundation's "Feddie" Award for Reporting on Federal Rules and Local Impact.</p>
-              <figure>
-                <div id="datachron" class="img-responsive portfolio-image"></div>
-              </figure>
-            </div>
-          </a>
-        </div>
-
-        <div class="proj col-xs-12 col-md-5 col-sm-5 col-lg-5">
-          <a href="http://www.houstonchronicle.com/news/houston-texas/houston/article/For-years-the-Houston-area-has-been-losing-ground-7951625.php" title="Houston area has been losing ground">
-            <div class="di-project">
-              <h4>For years, the Houston area has been losing ground</h4>
-              <figure>
-                <figcaption>
-                  <p>Houston is sinking - and has been for decades. First in a series.</p>
-                </figcaption>
-                <div id="facultydiversity" class="img-responsive portfolio-image">
-
-
-                </div>
-              </figure>
-
-            </div>
-          </a>
-        </div>
-
-        <div class="proj col-xs-12 col-md-5 col-sm-5 col-lg-5">
-          <a href="http://www.houstonchronicle.com/local/article/How-floods-compare-7330750.php" title="Houston's 2015 and 2016 Floods">
-            <div class="di-project">
-              <h4>Breaking down Houston's recent flooding events</h4>
-              <figure>
-                <figcaption>
-                  <p>Much of the rainfall that drove the Houston region to a standstill last week has finally receded. It was enough rain to force business owners to close, schools to cancel and service roads to shut down.</p>
-                </figcaption>
-                <div id="titleix" class="img-responsive portfolio-image"></div>
-              </figure>
-            </div>
-          </a>
-        </div>
-
-
-        <div class="proj col-xs-12 col-md-5 col-sm-5 col-lg-5">
-          <a href="http://www.houstonchronicle.com/local/education/district-in-transition/" title="A SCHOOL DISTRICT IN TRANSITION">
-            <div class="di-project">
-              <h4>District in Transition</h4>
-              <figure>
-                <figcaption>
-                  <p>The level of a student's eventual high school achievements in Fort Bend ISD can probably be projected before the first day of elementary school..</p>
-                </figcaption>
-                <div id="phil-50" class="img-responsive portfolio-image"></div>
-              </figure>
-            </div>
-          </a>
-        </div>
-        <div class="proj col-xs-12 col-md-5 col-sm-5 col-lg-5">
-          <a href="http://www.houstonchronicle.com/local/article/DEA-dismantles-Houston-network-tied-to-Mexican-6652194.php" title="Operation Hielo Mexicano -- Mexican Ice -- is far from over.">
-            <div class="di-project">
-              <h4>Dismantled drug network highlights Houston's meth surge</h4>
-              <figure>
-                <figcaption>
-                  <p>On a September morning in 2014, DEA agents with search warrants in hand swarmed several properties in Houston.</p>
-                </figcaption>
-                <div id="giving-trends" class="img-responsive portfolio-image"></div>
-              </figure>
-            </div>
-          </a>
-        </div>
-        <div class="proj col-xs-12 col-md-5 col-sm-5 col-lg-5">
-          <a href="http://www.houstonchronicle.com/local/article/Homicide-victims-were-5-times-more-likely-to-be-6785773.php" title="Black residents make up less than a quarter of population">
-            <div class="di-project">
-              <h4>Homicide victims were 5 times more likely to be black than white</h4>
-              <figure>
-                <figcaption>
-                  <p>An African American resident in Harris County is five times more likely than a white resident and two times more likely than a Hispanic resident to be the victim of a homicide, according to a Houston ...</p>
-                </figcaption>
-                <div id="endowments" class="img-responsive portfolio-image"></div>
-              </figure>
-            </div>
-          </a>
-        </div>
-        
-        
-        <div class="proj col-xs-12 col-md-5 col-sm-5 col-lg-5">
-          <a href="http://www.houstonchronicle.com/news/houston-texas/houston/article/Despite-national-result-Houston-area-goes-blue-10606238.php">
-            <div class="di-project">
-              <h4>Houston Region Turning Shades of Blue</h4>
-              <p>How college students are funding the athletics arms race.</p>
-              <figure>
-                <div id="ncaa" class="img-responsive portfolio-image"></div>
-              </figure>
-            </div>
-          </a>
-        </div>
-        <div class="proj col-xs-12 col-md-5 col-sm-5 col-lg-5">
-          <a href="http://www.houstonchronicle.com/news/article/MUDs-sell-bonds-levy-taxes-for-developers-who-9957390.php">
-            <div class="di-project">
-              <h4>Unchecked MUDs have $60B in debt</h4>
-              <p>MUDs sell bonds, levy taxes for developers who court conservative politicians with campaign cash.</p>
-              <figure>
-                <div id="phil400" class="img-responsive portfolio-image"></div>
-              </figure>
-            </div>
-          </a>
-        </div>
-        <div class="proj col-xs-12 col-md-5 col-sm-5 col-lg-5">
-          <a href="http://www.houstonchronicle.com/local/themillion/article/Maps-reveal-density-of-immigrant-neighborhood-6390645.php" title="View How Houston's Identity was Shaped">
-            <div class="di-project">
-              <h4>How the 1970s and '80s shaped Houston's migrant settlement patterns</h4>
-              <p>While Mexican immigrants blanket all corners of Houston, expansion for other large migrant groups hasn't been as clear-cut -- even if Spanish is their native language -- based on a Houston Chronicle analysis.</p>
-              <figure>
-                <div id="execcomp" class="img-responsive portfolio-image"></div>
-              </figure>
-            </div>
-          </a>
-        </div>
-
-
-        <div class="proj col-xs-12 col-md-5 col-sm-5 col-lg-5">
-          <a href="http://www.houstonchronicle.com/news/houston-texas/houston/article/Nature-ruled-man-reacted-Hurricane-Harvey-was-12410285.php" title="Developing Storm | Part 1: Nature ruled, man reacted.">
-            <div class="di-project">
-              <h4>Developing Storm | Part 1: Nature ruled, man reacted.</h4>
-              <p> Hurricane Harvey was Houston's reckoning. In part one of this investigative series, reporter Susan Caroll explores what steps local authorities took behind the scenes when Hurricane Harvey hit Houston. Each of the interactives embeded in the piece were created and coded by John D. Harden, using JavaScript and Google Maps API. </p>
-              <figure>
-                <div id="minwage" class="img-responsive portfolio-image"></div>
-              </figure>
-            </div>
-          </a>
-        </div>
-
-
-      <section class="col-xs-12 col-sm-12 col-md-12 col-lg-10 col-lg-offset-1 contact">
-        <div class="hed col-xs-12 col-md-12 col-sm-12 col-lg-12">
-          slide in
-        </div>
-        <div class="media-inline">
-          <a href="//twitter.com/jdharden"><i class="fa fa-twitter fa-4x"></i></a>
-          <a href="mailto:jdharden123@gmail.com"><i class="fa fa-envelope fa-3x"></i></a>
-          <a href="https://github.com/jdharden"><i class="fa fa-github fa-4x"></i></a>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="footer-wrap">
-        <div class="sites">
-
-        </div>
-        <div class="address">
-          <p>Somewhere in Washington, DC</p>
-
-        </div>
+  <div class="w3-row w3-padding-32 w3-section">
+    <div class="w3-col m4 w3-container">
+    </div>
+    <div class="w3-col m8 w3-panel">
+      <div class="w3-large w3-margin-bottom">
+        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> D.C., US<br>
+        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: john.harden@washpost.com<br>
       </div>
-    </footer>
-  </body>
+      <p>Let's meet for a cup of <i class="fa fa-coffee"></i>, or send me a tip:</p>
+      <form action="/action_page.php" target="_blank">
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+          </div>
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+          </div>
+        </div>
+        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+       
+        <button class="w3-button w3-black w3-right w3-section" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
 
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>Return to Top</a>
+  <div class="w3-xlarge w3-section">
+    <i class="fa fa-instagram w3-hover-opacity"> Jdharden</i><br>
+    <i class="fa fa-twitter w3-hover-opacity"> @jdharden</i><br>
+    <i class="fa fa-linkedin w3-hover-opacity"> John D. Harden</i>
+  </div>
+  <p><a href="https://www.washingtonpost.com" title="W3.CSS" target="_blank" class="w3-hover-text-green">The Washington Post</a></p>
+  All Photos Were Taken by John D. Harden
+</footer>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
 </html>
