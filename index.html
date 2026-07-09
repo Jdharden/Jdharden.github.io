@@ -1,247 +1,490 @@
 <!DOCTYPE html>
-<html>
-<title>John D. Harden</title>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>John D. Harden — Investigative Data Reporter</title>
+<meta name="description" content="John D. Harden is an investigative database reporter at The Washington Post, turning datasets into narratives.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
-body, html {
-  height: 100%;
-  color: #777;
-  line-height: 1.8;
+:root{
+  --bg:#0d0d0f;
+  --bg-alt:#141417;
+  --bg-card:#18181c;
+  --line:#26262b;
+  --text:#e8e6e3;
+  --muted:#8e8b87;
+  --accent:#e0a53c;
+  --accent-dim:#8a6522;
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',system-ui,sans-serif;
+  font-weight:300;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+img{display:block;max-width:100%}
+
+/* ---------- Nav ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px 40px;
+  transition:background .35s ease,padding .35s ease,border-color .35s ease;
+  border-bottom:1px solid transparent;
+}
+.nav.scrolled{
+  background:rgba(13,13,15,.88);
+  backdrop-filter:blur(12px);
+  padding:14px 40px;
+  border-bottom:1px solid var(--line);
+}
+.nav .brand{
+  font-family:'Playfair Display',serif;
+  font-size:1.05rem;letter-spacing:.02em;text-decoration:none;font-weight:500;
+}
+.nav .brand span{color:var(--accent)}
+.nav-links{display:flex;gap:34px;list-style:none}
+.nav-links a{
+  text-decoration:none;font-size:.72rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--muted);
+  position:relative;padding-bottom:4px;transition:color .2s;
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:0;height:1px;width:0;
+  background:var(--accent);transition:width .28s ease;
+}
+.nav-links a:hover{color:var(--text)}
+.nav-links a:hover::after{width:100%}
+.burger{display:none;background:none;border:0;color:var(--text);font-size:1.4rem;cursor:pointer}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;min-height:100vh;
+  display:flex;align-items:center;
+  background:url('https://github.com/Jdharden/Jdharden.github.io/blob/master/20190831_163313.jpg?raw=true') center/cover fixed no-repeat;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(13,13,15,.94) 0%,rgba(13,13,15,.78) 45%,rgba(13,13,15,.45) 100%);
+}
+.hero-inner{position:relative;z-index:2;max-width:var(--max);margin:0 auto;padding:0 40px;width:100%}
+.eyebrow{
+  font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:26px;
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.7rem,6.5vw,5.2rem);
+  font-weight:700;line-height:1.02;letter-spacing:-.02em;margin-bottom:26px;
+}
+.hero p{max-width:46ch;color:var(--muted);font-size:1.05rem;margin-bottom:40px}
+.hero p strong{color:var(--text);font-weight:400}
+.btn{
+  display:inline-block;text-decoration:none;
+  padding:14px 30px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+  border:1px solid var(--accent);color:var(--accent);
+  transition:background .25s,color .25s;
+}
+.btn:hover{background:var(--accent);color:#0d0d0f}
+.btn.ghost{border-color:var(--line);color:var(--muted);margin-left:12px}
+.btn.ghost:hover{border-color:var(--text);background:transparent;color:var(--text)}
+.scroll-cue{
+  position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:2;
+  font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);
+}
+.scroll-cue::after{
+  content:"";display:block;width:1px;height:38px;margin:12px auto 0;
+  background:linear-gradient(var(--accent),transparent);
 }
 
-/* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+/* ---------- Sections ---------- */
+section{padding:120px 0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 40px}
+.section-head{margin-bottom:64px}
+.section-head .eyebrow{margin-bottom:14px}
+.section-head h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.9rem,3.6vw,2.9rem);font-weight:700;letter-spacing:-.01em;
+}
+.rule{width:56px;height:2px;background:var(--accent);margin-top:20px}
+
+#about{background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:1.55fr .95fr;gap:80px;align-items:start}
+.about-grid p{color:var(--muted);margin-bottom:22px}
+.about-grid p em{color:var(--text);font-style:italic}
+.about-grid a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+.about-grid a:hover{border-color:var(--accent)}
+.lead{font-size:1.18rem;color:var(--text)!important;font-weight:400;line-height:1.65}
+
+.facts{border-left:1px solid var(--line);padding-left:36px;position:sticky;top:120px}
+.fact{margin-bottom:34px}
+.fact .k{
+  display:block;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:8px;
+}
+.fact .v{font-size:.95rem;color:var(--muted);line-height:1.6}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.tag{
+  font-size:.7rem;letter-spacing:.06em;padding:5px 11px;
+  border:1px solid var(--line);color:var(--muted);border-radius:2px;
 }
 
-/* First image (Logo. Full height) */
-.bgimg-1 {
-  background-image: url('https://github.com/Jdharden/Jdharden.github.io/blob/master/20190831_163313.jpg?raw=true');
-  min-height: 100%;
+/* ---------- Portfolio ---------- */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{
+  position:relative;overflow:hidden;background:var(--bg-card);
+  border:1px solid var(--line);text-decoration:none;display:block;
+  transition:border-color .3s,transform .3s;
 }
-
-/* Second image (Portfolio) */
-.bgimg-2 {
-  background-image: url("https://github.com/Jdharden/Jdharden.github.io/blob/master/PicsArt_12-23-11.11.21.jpg?raw=true");
-  min-height: 400px;
+.card:hover{border-color:var(--accent-dim);transform:translateY(-3px)}
+.thumb{aspect-ratio:16/11;overflow:hidden;background:#0a0a0c}
+.thumb img{
+  width:100%;height:100%;object-fit:cover;
+  filter:grayscale(.35) brightness(.82);
+  transition:transform .6s cubic-bezier(.2,.7,.2,1),filter .4s;
 }
-
-/* Third image (Contact) */
-.bgimg-3 {
-  background-image: url("https://github.com/Jdharden/Jdharden.github.io/blob/master/20190817_214157.jpg?raw=trued");
-  min-height: 400px;
+.card:hover .thumb img{transform:scale(1.05);filter:grayscale(0) brightness(1)}
+.card-body{padding:22px 24px 26px}
+.card-meta{
+  font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:10px;
 }
+.card-title{
+  font-size:1rem;font-weight:400;line-height:1.45;color:var(--text);
+}
+.card-arrow{
+  margin-top:16px;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);transition:color .25s;
+}
+.card:hover .card-arrow{color:var(--accent)}
+.center{text-align:center;margin-top:64px}
 
-.w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
+/* ---------- Contact ---------- */
+#contact{
+  position:relative;
+  background:url("https://github.com/Jdharden/Jdharden.github.io/blob/master/20190817_214157.jpg?raw=true") center/cover fixed no-repeat;
+  border-top:1px solid var(--line);
+}
+#contact::before{content:"";position:absolute;inset:0;background:rgba(13,13,15,.9)}
+#contact .wrap{position:relative;z-index:2}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.contact-grid h2{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.6vw,2.9rem);margin-bottom:20px}
+.contact-grid > div > p{color:var(--muted);max-width:44ch}
+.contact-list{list-style:none;margin-top:10px}
+.contact-list li{padding:20px 0;border-bottom:1px solid var(--line)}
+.contact-list .k{
+  display:block;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:6px;
+}
+.contact-list a{color:var(--text);text-decoration:none;font-size:1rem}
+.contact-list a:hover{color:var(--accent)}
 
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1600px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: scroll;
-    min-height: 400px;
+/* ---------- Footer ---------- */
+footer{
+  background:var(--bg);border-top:1px solid var(--line);
+  padding:48px 0;
+}
+.foot{
+  max-width:var(--max);margin:0 auto;padding:0 40px;
+  display:flex;justify-content:space-between;align-items:center;gap:20px;
+  font-size:.78rem;color:var(--muted);
+}
+.foot a{color:var(--muted);text-decoration:none}
+.foot a:hover{color:var(--accent)}
+
+/* ---------- Reveal ---------- */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- Responsive ---------- */
+@media(max-width:1024px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid{grid-template-columns:1fr;gap:56px}
+  .facts{position:static;border-left:0;border-top:1px solid var(--line);padding:36px 0 0}
+}
+@media(max-width:760px){
+  .hero,#contact{background-attachment:scroll}
+  .nav{padding:18px 22px}
+  .nav.scrolled{padding:12px 22px}
+  .burger{display:block}
+  .nav-links{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;gap:0;
+    background:rgba(13,13,15,.97);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
   }
+  .nav-links.open{display:flex}
+  .nav-links li{border-top:1px solid var(--line)}
+  .nav-links a{display:block;padding:16px 22px}
+  .wrap,.hero-inner,.foot{padding-left:22px;padding-right:22px}
+  section{padding:84px 0}
+  .grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:40px}
+  .foot{flex-direction:column;text-align:center}
+  .btn.ghost{margin-left:0;margin-top:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important;scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
 }
 </style>
+</head>
 <body>
 
-<!-- Navbar (sit on top) -->
-<div class="w3-top w3-white">
-  <div class="w3-white" id="myNavbar">
-    <a class="w3-bar-item w3-button w3-hover-black w3-white w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-      <i class="fa fa-bars"></i>
-    </a>
+<nav class="nav" id="nav">
+  <a href="#home" class="brand">John D. Harden<span>.</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+</nav>
 
-    <a href="#home" class="w3-bar-item w3-button">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
-    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
-
-      <i class="fa fa-search"></i>
-    </a>
+<!-- Hero -->
+<header class="hero" id="home">
+  <div class="hero-inner">
+    <p class="eyebrow reveal">Investigative Database Reporter</p>
+    <h1 class="reveal">The stories hidden<br>deep in spreadsheets.</h1>
+    <p class="reveal">Data reporter on the investigations desk at <strong>The Washington Post</strong>. Pulitzer Prize winner, 2024. I take datasets apart and turn them into narratives.</p>
+    <div class="reveal">
+      <a href="#work" class="btn">View the work</a>
+      <a href="#contact" class="btn ghost">Get in touch</a>
+    </div>
   </div>
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="wblock w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
-    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
-    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
-    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+  <div class="scroll-cue">Scroll</div>
+</header>
+
+<!-- About -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">01 — About</p>
+      <h2>Reporting with data,<br>not just about it.</h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="about-grid">
+      <div class="reveal">
+        <p class="lead">I've been a <em>Washington Post</em> data reporter since 2018, embedded on the investigations desk but working across the newsroom — national, metro and foreign.</p>
+
+        <p>I've investigated flaws in federal programs and the burdens residents endure from high parking and traffic tickets. I helped guide the creation of the Post's mass killings database, which tracks incidents in which four or more people are killed, not including the shooter.</p>
+
+        <p>With Jessica Contrera, Jenn Abelson, Carolyn Van Houten and a team of Post journalists, I reported <em>"Abused by the Badge,"</em> an investigative series that exposed how hundreds of U.S. law enforcement officers have sexually abused children. The series prompted the Justice Department to issue new guidelines for the nation's 20,000 school police officers.</p>
+
+        <p>My work involves taking datasets, analyzing them and turning them into narratives that reveal the stories hidden deep in spreadsheets. My tools of choice are R, QGIS, OpenRefine and sometimes Python. With those I can clean, explore and visualize data. I'm also familiar with SQL and JavaScript.</p>
+
+        <p>I started at the Post in summer 2018 after leaving the <em>Houston Chronicle</em>, where I was part of the team recognized as a Pulitzer Prize finalist for its coverage of Hurricane Harvey.</p>
+
+        <p>In 2024 I was part of the Pulitzer Prize–winning team honored for what the committee described as a sobering examination of the AR-15 semi-automatic rifle — work that forced readers to reckon with the horrors wrought by the weapon so often used in mass shootings. I managed and analyzed the database tracking those events.</p>
+
+        <p>In addition to reporting, I teach journalism at UC Berkeley and I'm a senior fellow at USC Annenberg School for Communication and Journalism, working with journalists in the university's data journalism fellowship.</p>
+      </div>
+
+      <aside class="facts reveal">
+        <div class="fact">
+          <span class="k">Currently</span>
+          <span class="v">Investigative data reporter,<br>The Washington Post</span>
+        </div>
+        <div class="fact">
+          <span class="k">Recognition</span>
+          <span class="v">2024 Pulitzer Prize winner (AR-15 series)<br>2018 Pulitzer finalist (Hurricane Harvey)</span>
+        </div>
+        <div class="fact">
+          <span class="k">Teaching</span>
+          <span class="v">UC Berkeley · Senior fellow, USC Annenberg</span>
+        </div>
+        <div class="fact">
+          <span class="k">Toolkit</span>
+          <div class="tags">
+            <span class="tag">R</span><span class="tag">QGIS</span><span class="tag">OpenRefine</span>
+            <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">JavaScript</span>
+          </div>
+        </div>
+      </aside>
+    </div>
   </div>
+</section>
 
-</div>
+<!-- Work -->
+<section id="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">02 — Selected work</p>
+      <h2>Investigations &amp; analysis</h2>
+      <div class="rule"></div>
+    </div>
 
-<!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-  <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">By John D. Harden </span>
-  </div>
-</div>
+    <div class="grid">
+      <a class="card reveal" target="_blank" rel="noopener" href="https://www.washingtonpost.com/local/outdated-poverty-data-funneled-millions-to-wealthy-dc-neighborhoods-post-analysis-shows/2019/11/19/3eadb000-b25c-11e9-951e-de024209545d_story.html?arc404=true">
+        <div class="thumb"><img loading="lazy" src="https://www.washingtonpost.com/resizer/QSQ2LtFJeaAy6wwxB57Z8scPan8=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/6DPB4EGZLMI6TINFCYVYVHE4UI.jpg" alt="Outdated poverty data funneled millions to wealthy D.C. neighborhoods"></div>
+        <div class="card-body">
+          <p class="card-meta">The Washington Post</p>
+          <h3 class="card-title">Outdated poverty data funneled millions to wealthy D.C. neighborhoods</h3>
+          <p class="card-arrow">Read →</p>
+        </div>
+      </a>
 
-<!-- Container (About Section) -->
-<div class="w3-content w3-container w3-padding-64" id="about">
-  <h3 class="w3-center">ABOUT ME</h3>
-  <p class="w3-center"><em>Investigative Database Reporter</em></p>
+      <a class="card reveal" target="_blank" rel="noopener" href="https://www.washingtonpost.com/local/a-federal-program-was-established-to-help-disadvantaged-areas-thats-not-where-most-of-the-money-goes/2019/04/25/c0bae5c2-f411-11e8-80d0-f7e1948d55f4_story.html?arc404=true">
+        <div class="thumb"><img loading="lazy" src="https://www.washingtonpost.com/resizer/bQZdgFehwejZ6ZZ-r-pPJM5_t10=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/FIMAE6BPZYI6TB4BOY3BT4JMWQ.jpg" alt="A federal program was established to help disadvantaged areas"></div>
+        <div class="card-body">
+          <p class="card-meta">The Washington Post</p>
+          <h3 class="card-title">A federal program was built to help disadvantaged areas. That's not where the money went.</h3>
+          <p class="card-arrow">Read →</p>
+        </div>
+      </a>
 
-<p>I've been a <i>Washington Post</i> data reporter since 2018.&nbsp;</p><p>I'm embedded on the investigations desk, but, I've worked across the newsroom including, which includes writing for the national, metro and foreign desk.&nbsp;</p><p>I've investigated flaws in federal programs, the burdens community residents endure related to high parking and traffic tickets and I've helped guide the creation of the mass killings database, which tracks mass killings in which four or more people are killed, not including the shooter.&nbsp;</p><p>With Jessica Contrera, Jenn Abelson, Carolyn Van Houten and a team of Post journalists, he reported "Abused by the Badge," an investigative series that exposed how hundreds of U.S. law enforcement officers have sexually abused children. The series prompted the Justice Department to issue new guidelines for the nation's 20,000 school police officers.</p><p>My work involves taking datasets, analyzing them and turning them into narratives that reveal the stories hidden deep in spreadsheets. My tools of choice are R, QGIS, OpenRefine and sometimes Python. With those tools I can clean, explore and visualize data. I'm also familiar with SQL and Javascript.</p><p>I started working for the Post in Summer 2018 after leaving the <i>Houston Chronicle</i>. In 2018, I was a part of the team recognized as a Pulitzer Prize finalist for its coverage of Hurricane Harvey.&nbsp;</p><p>I was also a part of the 2024 Pulitzer Prize winning team that won for what the Pulitzer committee described as a sobering examination of the AR-15 semi-automative rifle, which forced readers to reckon with the horrors wrought by the weapon often used for mass shootings. I managed and analyzed the database that tracked such events, providing insights into each incident.&nbsp;</p><p>In addition to reporting, I also teach journalism at UC Berkeley and I'm a senior fellow at&nbsp;USC Annenberg School for Communication and Journalism, working with journalists in the university's data journalism fellowship.&nbsp;</p>
+      <a class="card reveal" target="_blank" rel="noopener" href="https://www.washingtonpost.com/religion/how-president-obama-politicized-thoughts-and-prayers-after-mass-shootings/2019/04/19/2895d7b6-5d5c-11e9-a00e-050dc7b82693_story.html">
+        <div class="thumb"><img loading="lazy" src="https://github.com/Jdharden/Jdharden.github.io/blob/master/imrs.jpeg?raw=true" alt="How 'thoughts and prayers' changed after mass shootings"></div>
+        <div class="card-body">
+          <p class="card-meta">The Washington Post</p>
+          <h3 class="card-title">How President Obama politicized the use of 'thoughts and prayers'</h3>
+          <p class="card-arrow">Read →</p>
+        </div>
+      </a>
 
-<p><br /></p><p>Find me on <a href="https://www.linkedin.com/in/jdharden/">Linkedin</a> to connect.&nbsp;</p><p><br /></p><p><br /></p><p><br /></p>
+      <a class="card reveal" target="_blank" rel="noopener" href="https://www.washingtonpost.com/graphics/2020/local/public-safety/crime-rate-coronavirus/">
+        <div class="thumb"><img loading="lazy" src="https://github.com/Jdharden/Jdharden.github.io/blob/master/violent.png?raw=true" alt="Violent crime and the coronavirus stay-at-home orders"></div>
+        <div class="card-body">
+          <p class="card-meta">The Washington Post</p>
+          <h3 class="card-title">Violent crime surged in Black-majority neighborhoods after lockdowns lifted</h3>
+          <p class="card-arrow">Read →</p>
+        </div>
+      </a>
 
+      <a class="card reveal" target="_blank" rel="noopener" href="https://www.washingtonpost.com/dc-md-va/interactive/2021/virginia-maryland-dc-coronavirus-spread/">
+        <div class="thumb"><img loading="lazy" src="https://github.com/Jdharden/Jdharden.github.io/blob/master/infection_rates.png?raw=true" alt="Coronavirus infection rates in White- and Black-majority counties"></div>
+        <div class="card-body">
+          <p class="card-meta">The Washington Post</p>
+          <h3 class="card-title">Tracking coronavirus spread across D.C., Maryland and Virginia</h3>
+          <p class="card-arrow">Read →</p>
+        </div>
+      </a>
 
+      <a class="card reveal" target="_blank" rel="noopener" href="https://www.houstonchronicle.com/news/houston-texas/houston/article/Delayed-911-responses-during-Harvey-left-12979327.php">
+        <div class="thumb"><img loading="lazy" src="https://s.hdnux.com/photos/73/66/71/15691367/5/gallery_xlarge.jpg" alt="Delayed 911 responses during Hurricane Harvey"></div>
+        <div class="card-body">
+          <p class="card-meta">Houston Chronicle</p>
+          <h3 class="card-title">Delayed 911 responses during Harvey left residents waiting days for help</h3>
+          <p class="card-arrow">Read →</p>
+        </div>
+      </a>
 
+      <a class="card reveal" target="_blank" rel="noopener" href="https://www.houstonchronicle.com/news/houston-texas/houston/article/Loss-of-jobs-business-puts-Sunnyside-in-peril-11226461.php">
+        <div class="thumb"><img loading="lazy" src="https://s.hdnux.com/photos/61/77/44/13105444/3/920x1240.jpg" alt="Loss of jobs and business puts Sunnyside in peril"></div>
+        <div class="card-body">
+          <p class="card-meta">Houston Chronicle</p>
+          <h3 class="card-title">Loss of jobs, business puts Sunnyside in peril</h3>
+          <p class="card-arrow">Read →</p>
+        </div>
+      </a>
 
-<!-- Second Parallax Image with Portfolio Text -->
-<div class="bgimg-2 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">PORTFOLIO</span>
-  </div>
-</div>
+      <a class="card reveal" target="_blank" rel="noopener" href="https://www.houstonchronicle.com/news/houston-texas/houston/article/For-years-the-Houston-area-has-been-losing-ground-7951625.php">
+        <div class="thumb"><img loading="lazy" src="https://s.hdnux.com/photos/46/57/71/10157648/3/gallery_xlarge.jpg" alt="For years, the Houston area has been losing ground"></div>
+        <div class="card-body">
+          <p class="card-meta">Houston Chronicle</p>
+          <h3 class="card-title">For years, the Houston area has been losing ground</h3>
+          <p class="card-arrow">Read →</p>
+        </div>
+      </a>
 
-<!-- Container (Portfolio Section) -->
-<div class="" id="portfolio">
-  <h3 class="w3-center">LATEST WORKS</h3>
-  <p class="w3-center"><em>My latest Projects at the Washington Post.<br> Click on the images to explore</em></p><br>
-
-  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-  <div class="w3-row-padding w3-center">
-    <div class="w3-col m3">
-      <a href="https://www.washingtonpost.com/local/outdated-poverty-data-funneled-millions-to-wealthy-dc-neighborhoods-post-analysis-shows/2019/11/19/3eadb000-b25c-11e9-951e-de024209545d_story.html?arc404=true">
-      <img src="https://www.washingtonpost.com/resizer/QSQ2LtFJeaAy6wwxB57Z8scPan8=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/6DPB4EGZLMI6TINFCYVYVHE4UI.jpg" style="width:100%" class="w3-hover-opacity" alt="Outdated poverty data funneled millions to wealthy D.C. neighborhoods, Post analysis shows">
+      <a class="card reveal" target="_blank" rel="noopener" href="https://www.washingtonpost.com/people/john-harden/">
+        <div class="thumb"><img loading="lazy" src="https://github.com/Jdharden/Jdharden.github.io/blob/master/PicsArt_12-23-11.11.21.jpg?raw=true" alt="More work by John D. Harden"></div>
+        <div class="card-body">
+          <p class="card-meta">Archive</p>
+          <h3 class="card-title">Everything else — the full byline archive</h3>
+          <p class="card-arrow">Browse →</p>
+        </div>
       </a>
     </div>
 
-    <div class="w3-col m3">
-        <a href="https://www.washingtonpost.com/local/a-federal-program-was-established-to-help-disadvantaged-areas-thats-not-where-most-of-the-money-goes/2019/04/25/c0bae5c2-f411-11e8-80d0-f7e1948d55f4_story.html?arc404=true">
-      <img src="https://www.washingtonpost.com/resizer/bQZdgFehwejZ6ZZ-r-pPJM5_t10=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/FIMAE6BPZYI6TB4BOY3BT4JMWQ.jpg" style="width:100%" class="w3-hover-opacity" alt="A federal program was established to help disadvantaged areas. That�s not where most of the money goes.">
-    </a>
-    </div>
-
-    <div class="w3-col m3">
-        <a href="https://www.washingtonpost.com/religion/how-president-obama-politicized-thoughts-and-prayers-after-mass-shootings/2019/04/19/2895d7b6-5d5c-11e9-a00e-050dc7b82693_story.html">
-      <img src="https://github.com/Jdharden/Jdharden.github.io/blob/master/imrs.jpeg?raw=true" style="width:100%" class="w3-hover-opacity" alt="How President Obama politicized the use of �thoughts and prayers� after mass shootings">
-   </a>
-    </div>
-
-    <div class="w3-col m3">
-        <a href="https://www.washingtonpost.com/graphics/2020/local/public-safety/crime-rate-coronavirus/">
-      <img src="https://github.com/Jdharden/Jdharden.github.io/blob/master/violent.png?raw=true" style="width:100%" class="w3-hover-opacity" alt="Amazon�s HQ2 prompts housing price spikes in Northern Virginia, Washington Post analysis shows">
-    </a>
+    <div class="center reveal">
+      <a class="btn" target="_blank" rel="noopener" href="https://www.washingtonpost.com/people/john-harden/">See all stories</a>
     </div>
   </div>
+</section>
 
-  <div class="w3-row-padding w3-center w3-section">
-    <div class="w3-col m3">
-        <a href="https://www.houstonchronicle.com/news/houston-texas/houston/article/Delayed-911-responses-during-Harvey-left-12979327.php">
-      <img src="https://s.hdnux.com/photos/73/66/71/15691367/5/gallery_xlarge.jpg" style="width:100%" class="w3-hover-opacity" alt="Delayed 911 responses during Harvey left some residents waiting days for help">
-    </a>
-    </div>
-
-    <div class="w3-col m3">
-        <a href="https://www.houstonchronicle.com/news/houston-texas/houston/article/Loss-of-jobs-business-puts-Sunnyside-in-peril-11226461.php">
-      <img src="https://s.hdnux.com/photos/61/77/44/13105444/3/920x1240.jpg" style="width:100%" class="w3-hover-opacity" alt="Loss of jobs, business puts Sunnyside in peril">
-    </a>
-    </div>
-
-    <div class="w3-col m3">
-        <a href="https://www.houstonchronicle.com/news/houston-texas/houston/article/For-years-the-Houston-area-has-been-losing-ground-7951625.php">
-      <img src="https://s.hdnux.com/photos/46/57/71/10157648/3/gallery_xlarge.jpg" style="width:100%" class="w3-hover-opacity" alt="For years, the Houston area has been losing ground">
-    </a>
-    </div>
-
-    <div class="w3-col m3">
-        <a href="https://www.washingtonpost.com/dc-md-va/interactive/2021/virginia-maryland-dc-coronavirus-spread/">
-      <img src="https://github.com/Jdharden/Jdharden.github.io/blob/master/infection_rates.png?raw=true" style="width:100%" class="w3-hover-opacity" alt="MUDs sell bonds, levy taxes for developers who court conservative politicians with campaign cash">
-    </a>
-    </div>
-
-    <a href="https://www.washingtonpost.com/people/john-harden/">
-    <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button></a>
-  </div>
-</div>
-
-<!-- Modal for full size images on click-->
-<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
-  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    <img id="img01" class="w3-image">
-    <p id="caption" class="w3-opacity w3-large"></p>
-  </div>
-</div>
-
-<!-- Third Parallax Image with Portfolio Text -->
-<div class="bgimg-3 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-     <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
-  </div>
-</div>
-
-<!-- Container (Contact Section) -->
-<div class="w3-content w3-container w3-padding-64" id="contact">
-
-  <div class="w3-row w3-padding-32 w3-section">
-    <div class="w3-col m4 w3-container">
-    </div>
-
-
-    <div class="w3-col m8 w3-panel">
-      <!--  <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> D.C., US<br>
-        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: john.harden@washpost.com<br> -->
+<!-- Contact -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="reveal">
+        <p class="eyebrow">03 — Contact</p>
+        <h2>Got a tip or a dataset?</h2>
+        <p>I'm always interested in documents, spreadsheets and leads that deserve a closer look. Reach out — I read everything.</p>
       </div>
-
+      <ul class="contact-list reveal">
+        <li>
+          <span class="k">Email</span>
+          <a href="mailto:john.harden@washpost.com">john.harden@washpost.com</a>
+        </li>
+        <li>
+          <span class="k">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/jdharden/" target="_blank" rel="noopener">linkedin.com/in/jdharden</a>
+        </li>
+        <li>
+          <span class="k">X / Twitter</span>
+          <a href="https://twitter.com/jdharden" target="_blank" rel="noopener">@jdharden</a>
+        </li>
+        <li>
+          <span class="k">Based in</span>
+          <a href="#contact" style="cursor:default">Washington, D.C.</a>
+        </li>
+      </ul>
     </div>
   </div>
-</div>
+</section>
 
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>Return to Top</a>
-  <div class="w3-xlarge w3-section">
-
-<i class="fa fa-twitter w3-hover-opacity"><a href="http://twiiter.com/jdharden" target="_blank">jdharden</a></i>
-
+<footer>
+  <div class="foot">
+    <span>© <span id="yr">2026</span> John D. Harden</span>
+    <span><a href="https://www.washingtonpost.com" target="_blank" rel="noopener">The Washington Post</a></span>
+    <span><a href="#home">Back to top ↑</a></span>
   </div>
-  <p><a href="https://www.washingtonpost.com" title="W3.CSS" target="_blank" class="w3-hover-text-green">The Washington Post</a></p>
-
 </footer>
 
 <script>
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
+document.getElementById('yr').textContent = new Date().getFullYear();
 
-// Change style of navbar on scroll
-window.onscroll = function() {myFunction()};
-function myFunction() {
-    var navbar = document.getElementById("myNavbar");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-    } else {
-        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-    }
-}
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 60);
+onScroll();
+window.addEventListener('scroll', onScroll, {passive:true});
 
-// Used to toggle the menu on small screens when clicking on the menu button
-function toggleFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
+const burger = document.getElementById('burger');
+const links = document.getElementById('navLinks');
+burger.addEventListener('click', () => {
+  const open = links.classList.toggle('open');
+  burger.setAttribute('aria-expanded', open);
+  burger.textContent = open ? '✕' : '☰';
+});
+links.addEventListener('click', e => {
+  if (e.target.tagName === 'A') {
+    links.classList.remove('open');
+    burger.textContent = '☰';
+    burger.setAttribute('aria-expanded', 'false');
+  }
+});
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((en, i) => {
+    if (en.isIntersecting) {
+      en.target.style.transitionDelay = (i * 60) + 'ms';
+      en.target.classList.add('in');
+      io.unobserve(en.target);
     }
-}
+  });
+}, {threshold:.12, rootMargin:'0px 0px -60px'});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
-
 </body>
 </html>
